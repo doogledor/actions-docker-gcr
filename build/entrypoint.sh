@@ -9,7 +9,7 @@ set -e
 : ${INPUT_LATEST:=true}
 
 
-docker build $INPUT_ARGS -t $INPUT_IMAGE:$INPUT_TAG apps/dashboard
+docker build $INPUT_ARGS -t $INPUT_IMAGE:$INPUT_TAG ./apps/dashboard
 docker tag $INPUT_IMAGE:$INPUT_TAG $INPUT_REGISTRY/$INPUT_IMAGE:$INPUT_TAG
 
 if [ $INPUT_LATEST = true ]; then
