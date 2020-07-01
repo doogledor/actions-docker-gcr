@@ -16,7 +16,6 @@ else
   echo "INPUT_GCLOUD_KEY was empty, not performing auth" 1>&2
 fi
 
-cd apps/dashboard
 
 docker push $INPUT_REGISTRY/$INPUT_IMAGE:$INPUT_TAG
 
