@@ -8,6 +8,8 @@ set -e
 : ${INPUT_TAG:=$GITHUB_SHA}
 : ${INPUT_LATEST:=true}
 
+cd apps/dashboard
+
 docker build $INPUT_ARGS -t $INPUT_IMAGE:$INPUT_TAG .
 docker tag $INPUT_IMAGE:$INPUT_TAG $INPUT_REGISTRY/$INPUT_IMAGE:$INPUT_TAG
 
